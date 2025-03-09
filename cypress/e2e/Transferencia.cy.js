@@ -38,6 +38,7 @@ describe('Transferencia', () => {
 it ("Só é permitido transferência quando saldo é igual ou maior que valor para transferir", () => { 
     cy.Cadastrando_uma_conta()
     cy.Cadastrando_uma_conta_2()
+    cy.wait(2000)
     cy.Preenchendo_o_campo_de_Email_na_tela_de_Login()
     cy.Preenchendo_o_campo_de_Senha_na_tela_de_Login()
     cy.Clicando_no_botão_de_Login()

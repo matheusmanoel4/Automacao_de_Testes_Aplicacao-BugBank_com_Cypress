@@ -76,7 +76,9 @@ Cypress.Commands.add('Cadastrando_uma_conta_2', () => {
     cy.get(':nth-child(5) > .login__eye').click({ force: true })
     cy.wait(2000)
     cy.Clicar_Botao_Cadastrar()
+    cy.wait(1000)
     cy.Salvando_numero_de_conta()
+    cy.wait(1000)
     cy.Clicar_no_botão_de_Fechar_apos_criar_a_conta()
 })
 
