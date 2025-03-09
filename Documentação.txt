@@ -1,0 +1,73 @@
+Nesta documentação, primeiramente realizei os testes automatizados dos fluxos das funções de cada tela descrita no site. e depois os problemas identificados na tela.
+
+TELA DE CADASTRO 
+
+1 Os campos Nome, Email, Senha e Confirmação de senha são de preenchimento obrigatório
+    - Ao realizar o cadastro sem preencher nenhum campo, é exibida uma mensagem abaixo dos campos dizendo 'É campo obrigatório'. O correto seria exibir a mensagem 'Preenchimento obrigatório'.
+
+2 Tentativa de cadastro sem preencher nome deve visualizar a mensagem "Nome não pode ser vazio
+    - Ao tentar cadastrar uma conta sem preencher o campo 'Nome', a mensagem 'Nome não pode ser vazio' não aparece abaixo do campo, gerando inconsistências no sistema.
+    - Quando tento cadastrar uma conta sem preencher o campo 'Nome', uma mensagem ao usuário é exibida com o texto 'Nome não pode ser vazio'. O correto seria exibir uma mensagem mais explicativa ao usuário, como: 'Por favor, preencha o campo "Nome" para continuar'.
+
+3 Tentativa de cadastro sem preencher email deve visualizar a mensagem "Email não pode ser vazio" OK
+4 Tentativa de cadastro sem preencher senha deve visualizar a mensagem "Senha não pode ser vazio" OK
+5 Tentativa de cadastro sem preencher confirmação de senha deve visualizar a mensagem "Confirmar senha não pode ser vazio" OK
+6 Deixar ativo a opção "Criar conta com saldo" deve criar conta com saldo de R$ 1.000,00: OK
+7 Deixar inativo a opção "Criar conta com saldo" deve criar conta com saldo de R$ 0,00: OK
+8 Senha e confirmação de senha precisam ser iguais: OK
+9 Cadastrar conta com sucesso deve exibir número da conta criada: OK
+
+TELA DE CADASTRO 
+    Problemas encontrados nessa tela 
+    - O placeholder do campo Nome está escrito como "Informe seu Nome", mas o correto seria "Informe seu nome" (minúsculo).
+    - Falta um título claro para o formulário de login, como "Faça login" ou "Entre na sua conta".
+    - O texto "Criar conta com saldo ?" tem um espaço antes do ponto de interrogação, o que não é correto. O correto seria "Criar conta com saldo?".
+    - Ao retornar à tela de cadastro após registrar uma conta, o sistema exibe nos campos as informações da última conta cadastrada.
+    - Na tela de cadastro, só é possível retornar à tela de login clicando no texto, em vez da seta ao lado. O comportamento esperado seria que a seta também permitisse o retorno à tela de login.
+    - Ao cadastrar uma nova conta, o sistema permite o uso das mesmas informações do cadastro anterior, o que representa uma falha de segurança.
+
+TELA DE LOGIN
+
+10 Email e Senha são campos obrigatórios: 
+    - Ao realizar o cadastro sem preencher nenhum campo, é exibida uma mensagem abaixo dos campos dizendo 'É campo obrigatório'. O correto seria exibir a mensagem 'Preenchimento obrigatório'.
+
+11 Tentativa de acesso sem preencher campos obrigatórios deve exibir a mensagem "Usuário e senha precisam ser preenchidos".
+    - Ao realizar o login sem preencher os campos de "Usuário" e "Senha" o sistema não me exibe uma mensagemm informando que "Usuário e senha precisam ser preenchidos"
+
+12 Não deve autorizar o acesso para usuários inválidos ou não cadastrados.
+    - Neste item eu fiz os seguinte cenarios de teste:
+        - Não preencher nenhum campo e clicar no botão de login
+        - Inserir um email inválido e uma senha válida e clicar no botão de login
+        - Inserir um email válido e uma senha inválida e clicar no botão de login
+        - Inserir um email válido e uma senha vazia e clicar no botão de login
+        - Inserir um email válido e senha válida e clicar no botão de login
+
+13 Usuários válidos e cadastros são direcionados para a home: OK
+
+    Problemas encontrados nessa tela
+    - botão "Registrar" poderia ser "Cadastre-se" para melhor clareza.
+    - No botão "Registrar", geralmente se usa "Cadastre-se" para criar uma conta e "Registrar" pode soar estranho dependendo do contexto.
+    - A tela de login geralmente tem um título como "Faça login" ou "Entre na sua conta", mas aqui não há um título claro para o formulário de login
+
+TRANFERENCIA
+
+14 Só é permitido transferência para contas válidas
+15 Só é permitido transferência quando saldo é igual ou maior que valor para transferir: OK
+16 Tentativa de transferência para conta inválida deve exibir mensagem de erro "Conta inválida ou inexistente" OK
+
+17 Número e digito da conta aceitam apenas numeros
+    - Na tela de Transferência, os campos "Número da conta" e "Dígito" permitem a inserção de letras, apesar do requisito indicar que devem aceitar apenas números. O comportamento esperado seria que esses campos impedissem a digitação de qualquer caractere não numérico
+
+18 Campo descrição é um campo de preenchimento obrigatório
+    - Na tela de Transferência, o campo "Descrição" é definido como obrigatório, porém, o sistema permite concluir a transferência sem preenchê-lo. O comportamento esperado seria que a transferência só fosse concluída após o preenchimento do campo, exibindo uma mensagem de erro caso esteja vazio.
+
+19 Valor de transferência não pode ser igual ou menor que zero: OK
+20 Ao realizar transferência com sucesso deve ser debitado o valor da conta e exibir a mensagem de "Transferência realizada com sucesso" OK
+
+21 Ao realizar uma transferência com sucesso deve ser redirecionado para o extrato
+    - Na tela de Transferência, após uma transferência bem-sucedida, o sistema exibe a mensagem "Transferência realizada com sucesso" e debita o valor da conta, porém, não redireciona o usuário para a tela de extrato, conforme esperado.
+
+    Problemas encontrados nessa tela
+    - Ao tentar realizar uma transferência para outra conta, caso eu insira um valor com casas decimais ou caracteres não numéricos, o sistema exibe uma mensagem de erro abaixo do campo, impedindo a conclusão da operação.
+    - Na tela de Transferência, só é possível retornar à tela de login clicando no texto, em vez da seta ao lado. O comportamento esperado seria que a seta também permitisse o retorno à tela inicial.
+    - O botão "Informe" (do dígito) não segue o mesmo estilo dos outros campos, podendo confundir o usuário
