@@ -1,41 +1,56 @@
-Automação de Testes - Aplicação BugBank
-Este repositório contém a automação de testes para a aplicação BugBank, utilizando Cypress. Os testes abordam as principais funcionalidades da aplicação, identificando e documentando problemas para garantir a qualidade do software.
+# 🧪 Automação de Testes – BugBank
 
-📝 Objetivo
-O objetivo deste projeto é realizar testes automatizados nos fluxos das funcionalidades de cada tela da aplicação BugBank e documentar os problemas encontrados durante a execução. A automação foi realizada utilizando o Cypress para garantir a eficiência e confiabilidade dos testes.
+Este repositório contém a automação de testes da aplicação **BugBank**, utilizando o framework **Cypress**. Os testes cobrem os principais fluxos da aplicação, com o objetivo de garantir a qualidade, eficiência e segurança do sistema.
 
-🖥️ Funcionalidades Testadas
-📍 Tela de Cadastro
-Casos de Teste Validados:
+---
 
-Criar conta com saldo ativado inicia com R$ 1.000,00.
-Criar conta sem saldo ativado inicia com R$ 0,00.
-Senha e confirmação de senha precisam ser iguais.
-Cadastro bem-sucedido exibe o número da conta criada.
-Problemas Identificados:
+## 📌 Objetivo
 
-Mensagens de erro e placeholders inconsistentes.
-Falhas de usabilidade e segurança, como a reutilização indevida de dados de cadastro.
-📍 Tela de Login
-Casos de Teste Validados:
+Automatizar os testes das funcionalidades da aplicação BugBank, verificando comportamentos esperados e documentando eventuais falhas com clareza. A automação foi desenvolvida utilizando **Cypress**, garantindo testes rápidos, robustos e confiáveis.
 
-Usuários válidos são redirecionados para a home.
-Problemas Identificados:
+---
 
-Mensagens de erro não são exibidas corretamente.
-Falta de clareza no título da tela e no botão de registro.
-📍 Tela de Transferência
-Casos de Teste Validados:
+## 🖥️ Funcionalidades Testadas
 
-Transferências somente para contas válidas e com saldo suficiente.
-Mensagens de sucesso e erro estão corretas para diferentes cenários.
-Problemas Identificados:
+### 🧾 Tela de Cadastro
 
-Campos de entrada aceitam caracteres inválidos.
-A interface de usuário apresenta inconsistências, como o estilo dos botões e a falta de redirecionamento para a tela de extrato.
-🔧 Tecnologias Utilizadas
-Cypress para automação de testes
-JavaScript para escrita dos scripts de teste
+**Casos de Teste Validados:**
+- ✅ Criar conta com saldo ativado inicia com **R$ 1.000,00**.
+- ✅ Criar conta sem saldo ativado inicia com **R$ 0,00**.
+- ✅ Validação de senha e confirmação de senha.
+- ✅ Cadastro bem-sucedido exibe o número da conta.
 
-📋 Contribuição
-Sinta-se à vontade para contribuir com melhorias, correções ou sugestões. Se você encontrar algum bug, por favor, abra uma issue.
+**Problemas Identificados:**
+- ⚠️ Mensagens de erro e placeholders inconsistentes.
+- ⚠️ Reutilização indevida de dados de cadastro.
+- ⚠️ Falhas de usabilidade e segurança.
+
+---
+
+### 🔐 Tela de Login
+
+**Casos de Teste Validados:**
+- ✅ Usuários válidos são redirecionados corretamente para a **home**.
+
+**Problemas Identificados:**
+- ⚠️ Mensagens de erro ausentes ou incorretas.
+- ⚠️ Título e botão de registro pouco intuitivos.
+
+---
+
+### 💸 Tela de Transferência
+
+**Casos de Teste Validados:**
+- ✅ Transferências permitidas apenas com saldo suficiente e para contas válidas.
+- ✅ Mensagens apropriadas para sucesso e falha.
+
+**Problemas Identificados:**
+- ⚠️ Campos de entrada aceitam caracteres inválidos.
+- ⚠️ Inconsistências na interface (estilos de botão, redirecionamento ausente para extrato).
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- [Cypress](https://www.cypress.io/) – Automação de testes E2E
+- JavaScript – Linguagem utilizada para escrever os testes
